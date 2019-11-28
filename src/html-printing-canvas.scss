@@ -1,0 +1,38 @@
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 5mm;
+    }
+}
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+article {
+    margin: 5mm;
+    border: initial;
+    border-radius: initial;
+    width: initial;
+    min-height: initial;
+    box-shadow: initial;
+    background: initial;
+    page-break-after: always;
+    width: 30cm;
+    min-height: 29.7cm;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+header, footer {
+    display: none;
+}
+.top-col-p, .btm-col-p {
+    display: inline-block;
+    font-size: 32px;
+    height: 100px;
+    width: 100%;
+}
