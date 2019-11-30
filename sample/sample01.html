@@ -7,47 +7,6 @@
     <title>Sample document</title>
     <script src="../dist/html2canvas.min.js"></script>
     <link rel="stylesheet" href="../dist/html2canvas.min.css" type="text/css" media='all' />
-    <style>
-/*@page {
-  size: A4 portrait;
-  margin: 5mm;
-}
-@media print {
-  .page {
-    margin: 5mm;
-    border: initial;
-    border-radius: initial;
-    width: initial;
-    min-height: initial;
-    box-shadow: initial;
-    background: initial;
-    page-break-after: always;
-  }
-}
-* {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
-    body {
-        margin: 0;
-        padding: 0;
-    }
-    .top-col, .btm-col {
-        display:none;
-    }
-    .top-col-p, .btm-col-p {
-        display: inline-block;
-        font-size: 32px;
-        height: 100px;
-        width: 100%;
-    }
-    .page {
-        width: 30cm;
-        min-height: 29.7cm;
-        font-size: 20px;
-        font-family: 'Courier New', Courier, monospace;
-    }*/
-</style>
 </head>
 <body>
     <header>Верхний колонтитул</header>
@@ -276,65 +235,5 @@
     <footer>
 Нижний колонтитул
     </footer>
-
-
-<script>
-/*
-let pageHeightInPixel = 1604  // тут может быть какой-нибудь способ определить высоту 1й страницы
-    - 100 // верхний
-    - 100;  // нижний
-
-function renderPage(pageNum, topOffset, height) {
-    let cnv = document.createElement('canvas');
-    cnv.id = 'cnv-' + pageNum;
-    cnv.style = 'background-color: #ccc;';
-    let context = cnv.getContext('2d');
-    let img = document.getElementById('bigImg');
-    cnv.width = img.clientWidth;
-    cnv.height = height;
-    context.drawImage(img,
-        0, topOffset,   // Start at 70/20 pixels from the left and the top of the image (crop),
-        img.clientWidth, height,   // "Get" a `50 * 50` (w * h) area from the source image (crop),
-        0, 0,     // Place the result at 0, 0 in the canvas,
-        img.clientWidth, height); // With as width / height: 100 * 100 (scale)
-
-    let header = document.querySelector('.top-col').cloneNode(true);
-    header.className = 'top-col-p'
-    document.body.appendChild(header);
-    document.body.appendChild(cnv);
-    let footer = document.querySelector('.btm-col').cloneNode(true);
-    footer.className = 'btm-col-p'
-    document.body.appendChild(footer);
-}
-
-function cropping() {
-
-    if (document.body.scrollHeight > 0) {
-        let pagesCount = Math.ceil(document.body.scrollHeight/pageHeightInPixel);
-        console.debug('pages', pagesCount);
-        let offset = 0;
-        for (let i=0; i < pagesCount; i++) {
-            renderPage(i+1, offset, pageHeightInPixel);
-            offset = offset + pageHeightInPixel;
-        }
-        document.querySelector('#bigImg').style = 'display:none';
-    }
-}
-
-document.addEventListener("DOMContentLoaded", function(event) {
-    html2canvas(document.body, {imageTimeout:0}).then(function(canvas) {
-        canvas.id = 'cnv';
-        document.querySelector('.page').style = 'display:none';
-        let context = canvas.getContext('2d');
-        let dataUrl = canvas.toDataURL("image/png");
-        let img = new Image();
-        img.id = "bigImg"
-        img.src = dataUrl;
-        document.body.appendChild(img);
-        img.onload = cropping;
-    });
-});
-*/
-</script>
 </body>
 </html>
